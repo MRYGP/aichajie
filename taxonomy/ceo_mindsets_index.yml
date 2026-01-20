@@ -1,0 +1,178 @@
+# CEO思维模式索引
+# 用途：快速匹配项目类型与CEO思维模式
+# 版本：v3.0
+# 更新日期：2026-01-19
+
+ceo_mindsets:
+  
+  elon_musk:
+    name: "Elon Musk"
+    file: "01-knowledge-base/ceo-mindsets/elon-musk.md"
+    核心模式:
+      - "第一性原理（从物理定律重新推导）"
+      - "大胆设想 + 快速迭代"
+      - "物理约束 > 财务约束"
+      - "允许失败，但要快速失败"
+      - "亲自下场（前期必须亲自做）"
+    适用场景:
+      - "技术驱动型项目"
+      - "需要颠覆式创新"
+      - "挑战行业假设"
+      - "硬科技创业"
+      - "AI底层技术/基础设施"
+    经典案例:
+      - "SpaceX: 火箭成本从$450M降到$62M"
+      - "Tesla: 重新定义汽车"
+      - "Perplexity: 重新定义搜索"
+    keywords: ["第一性原理", "颠覆性创新", "快速迭代", "技术驱动"]
+    
+  jeff_bezos:
+    name: "Jeff Bezos"
+    file: "01-knowledge-base/ceo-mindsets/jeff-bezos.md"
+    核心模式:
+      - "长期主义（10-15年视角）"
+      - "客户至上（逆向工作法）"
+      - "飞轮效应（自增强循环）"
+      - "Day 1心态（保持创业状态）"
+      - "单线程领导者（专注）"
+    适用场景:
+      - "平台型业务"
+      - "需要长期积累"
+      - "重视用户体验"
+      - "To C产品"
+      - "需要建立飞轮"
+    经典案例:
+      - "Amazon: 从书店到万货商店"
+      - "AWS: 基础设施即服务"
+      - "Notion: 长期主义产品"
+    keywords: ["长期主义", "飞轮效应", "客户至上", "平台"]
+    
+  steve_jobs:
+    name: "Steve Jobs"
+    file: "01-knowledge-base/ceo-mindsets/steve-jobs.md"
+    核心模式:
+      - "简约至上（少即是多）"
+      - "完美主义（细节决定成败）"
+      - "用户体验驱动"
+      - "产品即艺术"
+      - "做减法（说不的艺术）"
+    适用场景:
+      - "消费电子"
+      - "设计驱动产品"
+      - "追求极致体验"
+      - "高端品牌"
+      - "To C产品"
+    经典案例:
+      - "iPhone: 重新定义手机"
+      - "Mac: 设计与性能完美结合"
+      - "Linear: 极简项目管理工具"
+    keywords: ["简约", "完美主义", "用户体验", "设计"]
+    
+  charlie_munger:
+    name: "Charlie Munger"
+    file: "01-knowledge-base/ceo-mindsets/charlie-munger.md"
+    核心模式:
+      - "多元思维模型（跨学科思考）"
+      - "逆向思维（避免失败）"
+      - "护城河理论"
+      - "理性决策"
+      - "延迟满足"
+    适用场景:
+      - "投资决策"
+      - "商业模式设计"
+      - "风险识别"
+      - "长期价值判断"
+      - "需要避免失败"
+    经典案例:
+      - "伯克希尔：复利的力量"
+      - "See's Candies: 品牌护城河"
+    keywords: ["多元思维", "逆向思维", "护城河", "风险"]
+    
+  clayton_christensen:
+    name: "Clayton Christensen"
+    file: "01-knowledge-base/ceo-mindsets/clayton-christensen.md"
+    核心模式:
+      - "破坏式创新（从低端切入）"
+      - "Jobs to be Done（用户雇佣产品）"
+      - "边缘市场突破"
+      - "价值网络理论"
+      - "够用就好（vs 更好）"
+    适用场景:
+      - "挑战行业巨头"
+      - "从边缘市场切入"
+      - "破坏式创新"
+      - "新市场创造"
+      - "资源有限"
+    经典案例:
+      - "Netflix vs Blockbuster"
+      - "Zoom vs Cisco WebEx"
+      - "Canva vs Adobe"
+    keywords: ["破坏式创新", "边缘市场", "低端切入", "够用就好"]
+    
+  lei_jun:
+    name: "雷军"
+    file: "01-knowledge-base/ceo-mindsets/lei-jun.md"
+    核心模式:
+      - "专注（只做一件事）"
+      - "极致（做到行业第一）"
+      - "口碑（用户主动传播）"
+      - "快（快速迭代）"
+    适用场景:
+      - "快速增长"
+      - "产品驱动"
+      - "需要快速验证"
+      - "资源有限"
+    经典案例:
+      - "小米：专注极致口碑快"
+      - "金山：快速迭代"
+    keywords: ["专注", "极致", "口碑", "快"]
+
+# 匹配规则
+matching_rules:
+  技术驱动项目:
+    primary: "elon_musk"
+    secondary: "jeff_bezos"
+    reasoning: "技术驱动需要第一性原理思维，平台型需要长期主义"
+  
+  平台型业务:
+    primary: "jeff_bezos"
+    secondary: "charlie_munger"
+    reasoning: "平台需要飞轮效应和长期主义，需要护城河思维"
+  
+  消费品:
+    primary: "steve_jobs"
+    secondary: "charlie_munger"
+    reasoning: "消费品需要极致体验和设计，需要品牌护城河"
+  
+  破坏式创新:
+    primary: "clayton_christensen"
+    secondary: "elon_musk"
+    reasoning: "破坏式创新从边缘切入，需要第一性原理挑战假设"
+  
+  投资决策:
+    primary: "charlie_munger"
+    secondary: "jeff_bezos"
+    reasoning: "投资需要多元思维和长期价值判断"
+  
+  快速增长:
+    primary: "lei_jun"
+    secondary: "steve_jobs"
+    reasoning: "快速增长需要专注和极致，需要快速迭代"
+
+# 使用指南
+usage_guide:
+  step1: "识别项目类型（技术驱动/平台/消费品/破坏式创新）"
+  step2: "根据matching_rules选择主要和次要CEO"
+  step3: "搜索对应的CEO文档：project_knowledge_search('[ceo_name]')"
+  step4: "对比项目特征与CEO模式"
+  step5: "分析匹配点/不匹配点"
+  step6: "提炼可学习点"
+
+# 快速参考
+quick_reference:
+  "如果项目是AI底层技术": "elon_musk"
+  "如果项目是平台型产品": "jeff_bezos"
+  "如果项目是To C消费品": "steve_jobs"
+  "如果项目需要避免失败": "charlie_munger"
+  "如果项目从边缘市场切入": "clayton_christensen"
+  "如果项目需要快速增长": "lei_jun"
