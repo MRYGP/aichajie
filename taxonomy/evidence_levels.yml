@@ -1,0 +1,138 @@
+# 证据等级分类系统
+# 用途：评估系统中所有断言必须标注证据等级
+# 版本：v3.0
+# 更新日期：2026-01-19
+
+evidence_levels:
+  A_direct_data:
+    name: "直接数据"
+    confidence: "90%+"
+    description: "可直接验证的原始数据，可信度最高"
+    sources:
+      - "官方财报"
+      - "第三方审计报告"
+      - "政府公开数据"
+      - "用户公开评论(大样本，>100条)"
+      - "官方披露的运营数据"
+      - "公开的融资公告"
+      - "产品实际使用截图"
+    usage: "用于关键决策依据，如评分、投资判断"
+    example: "根据公司Q3财报，营收增长120% [A级]"
+    warning: "无"
+    
+  B_indirect_inference:
+    name: "间接推断"
+    confidence: "70-90%"
+    description: "基于权威来源的推断，可信度较高"
+    sources:
+      - "行业报告(权威机构，如IDC/Gartner)"
+      - "权威媒体报道(如TechCrunch/36Kr)"
+      - "专家访谈"
+      - "竞品对比分析"
+      - "第三方调研数据"
+      - "用户访谈(小样本，5-20人)"
+    usage: "用于趋势判断和市场分析"
+    example: "根据Gartner报告，该市场年增长率30% [B级]"
+    warning: "需要交叉验证"
+    
+  C_reasonable_speculation:
+    name: "合理推测"
+    confidence: "50-70%"
+    description: "基于逻辑推理或类比的推测，需要验证"
+    sources:
+      - "逻辑推理"
+      - "类比其他案例"
+      - "模型估算"
+      - "间接数据推算"
+      - "行业常识"
+    usage: "用于假设验证和趋势预测"
+    example: "类比Notion早期增长，预估用户数10万+ [C级]"
+    warning: "⚠️ 需要在90天内验证，不可作为最终决策依据"
+    verification_required: true
+    verification_timeline: "D30/D60/D90"
+    
+  X_unverifiable:
+    name: "无法验证"
+    confidence: "<50%"
+    description: "缺少可靠证据，可信度低"
+    sources:
+      - "创始人宣称(无证据)"
+      - "小道消息"
+      - "纯主观判断"
+      - "匿名爆料"
+      - "未经验证的假设"
+    usage: "⚠️ 禁止作为决策依据"
+    example: "用户很满意 (创始人说的) [X级] ⚠️"
+    warning: "⚠️ 自动标红预警，建议D30验证"
+    action_required: "必须验证或标注为假设"
+
+# 使用规则
+usage_rules:
+  - "所有关键断言必须标注证据等级"
+  - "X级证据必须标红警告"
+  - "决策依据应≥B级"
+  - "C级证据需要验证计划"
+  - "如果80%以上是C/X级，触发'可信度不足'警告"
+  - "证据账本中必须列出所有关键断言的证据等级"
+
+# 证据等级分布标准
+quality_thresholds:
+  excellent:
+    A_percentage: "≥50%"
+    B_percentage: "≥30%"
+    C_percentage: "≤15%"
+    X_percentage: "≤5%"
+    overall_confidence: "≥85%"
+  
+  good:
+    A_percentage: "≥30%"
+    B_percentage: "≥40%"
+    C_percentage: "≤25%"
+    X_percentage: "≤5%"
+    overall_confidence: "≥75%"
+  
+  acceptable:
+    A_percentage: "≥20%"
+    B_percentage: "≥30%"
+    C_percentage: "≤40%"
+    X_percentage: "≤10%"
+    overall_confidence: "≥65%"
+  
+  warning:
+    condition: "X级占比>20% 或 C级占比>50%"
+    action: "触发可信度不足警告"
+    recommendation: "补充A/B级证据或重新评估"
+
+# 示例
+examples:
+  good:
+    - "用户增长率120% (来源: 官方公告) [A级]"
+    - "市场规模100亿 (来源: IDC报告) [B级]"
+    - "预估获客成本$10 (基于竞品对比) [C级，需D30验证]"
+  
+  bad:
+    - "用户很满意 (创始人说的) [X级] ⚠️ 缺少数据支撑"
+    - "我们是行业第一 (无来源) [X级] ⚠️ 需要验证"
+    - "产品很好 (主观判断) [X级] ⚠️ 需要用户数据支撑"
+
+# 证据来源验证清单
+verification_checklist:
+  A_level:
+    - "数据来源是否可追溯？"
+    - "数据是否经过审计？"
+    - "样本量是否足够大？"
+  
+  B_level:
+    - "报告来源是否权威？"
+    - "是否有多个来源交叉验证？"
+    - "数据是否是最新的？"
+  
+  C_level:
+    - "推理逻辑是否清晰？"
+    - "类比案例是否相似？"
+    - "是否有验证计划？"
+  
+  X_level:
+    - "为什么无法验证？"
+    - "如何设计验证实验？"
+    - "验证需要多长时间？"
