@@ -186,7 +186,7 @@ aichajie/
 
 ### 系统设计
 - [完整设计文档](智能体工作流完整设计.md) - 28,000字系统设计
-- [整合方案](sanxiang-wendao-integration-plan.md) - v2.0方案
+- [整合方案](docs/sanxiang-wendao-integration-plan.md) - v2.0方案
 
 ### 智能体详解
 - [智能体1：信息收集器](prompts/agent1_collector.md)
